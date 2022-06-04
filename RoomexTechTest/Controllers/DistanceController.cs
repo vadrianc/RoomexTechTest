@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RoomexTechTestApi.Infrastructure.Calculator;
+using RoomexTechTestApi.Infrastructure.MeasurementUnit;
 using RoomexTechTestApi.Model;
 using RoomexTechTestApi.Services;
 
@@ -17,7 +19,7 @@ namespace RoomexTechTestApi.Controllers
             Point end = new(latitude2, longitude2);
             Body body = new(start, end, form, unit);
 
-            return new DistanceCalculatorService().Process(body).ToString();
+            return new DistanceCalculatorService(new BodyFactory(), new MetricConverter()).Process(body).ToString();
         }
     }
 }
