@@ -1,4 +1,6 @@
-﻿namespace RoomexTechTestApi.Infrastructure.Calculator
+﻿using RoomexTechTestApi.Infrastructure.CustomException;
+
+namespace RoomexTechTestApi.Infrastructure.Calculator
 {
     /// <summary>
     /// Factory for spherical body related calculators.
@@ -31,7 +33,7 @@
                 return new PythagoreanCalculator();    
             }
 
-            return new DefaultCalculator();
+            throw new UnknownCalculatorException(type);
         }
     }
 }

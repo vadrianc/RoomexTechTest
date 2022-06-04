@@ -3,7 +3,7 @@ using RoomexTechTestApi.Infrastructure.CustomException;
 using RoomexTechTestApi.Model;
 using RoomexTechTestApi.Services;
 
-namespace RoomexTechTestApiTest
+namespace RoomexTechTestApiTest.Service
 {
     public class Tests
     {
@@ -28,7 +28,7 @@ namespace RoomexTechTestApiTest
             Body body = new(start, end, "unknown", Cosmos.DistanceUnits.Mile);
 
             DistanceCalculatorService service = new();
-            Assert.That(() => { service.Process(body); }, Throws.TypeOf<BodyShapeException>());
+            Assert.That(() => { service.Process(body); }, Throws.TypeOf<UnknownShapeException>());
         }
     }
 }

@@ -25,7 +25,7 @@ namespace RoomexTechTestApi.Services
             }
             else
             {
-                throw new BodyShapeException(body.Form);
+                throw new UnknownShapeException(body.Form);
             }
 
             ICalculator calculator = factory.GetCalculator(Cosmos.CalculationMethod.Pythagora);
