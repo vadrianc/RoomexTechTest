@@ -1,4 +1,4 @@
-﻿namespace RoomexTechTestApi.Services.MeasurementUnit
+﻿namespace RoomexTechTestApi.Infrastructure.MeasurementUnit
 {
     /// <summary>
     /// Functionality for converting metric values.

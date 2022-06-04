@@ -1,4 +1,4 @@
-﻿namespace RoomexTechTestApi.Services.Calculator
+﻿namespace RoomexTechTestApi.Infrastructure.Calculator
 {
     public class DefaultFactory : CalculatorFactoryBase
     {

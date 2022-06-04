@@ -1,4 +1,4 @@
-﻿namespace RoomexTechTestApi.Services.Calculator
+﻿namespace RoomexTechTestApi.Infrastructure.Calculator
 {
     /// <summary>
     /// Factory for spherical body related calculators.

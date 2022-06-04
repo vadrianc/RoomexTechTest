@@ -1,6 +1,6 @@
 ﻿using RoomexTechTestApi.Model;
 
-namespace RoomexTechTestApi.Services.Calculator
+namespace RoomexTechTestApi.Infrastructure.Calculator
 {
     /// <summary>
     /// Distance calculator interface.

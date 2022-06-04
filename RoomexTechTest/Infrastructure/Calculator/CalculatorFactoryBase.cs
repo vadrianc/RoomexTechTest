@@ -1,4 +1,4 @@
-﻿namespace RoomexTechTestApi.Services.Calculator
+﻿namespace RoomexTechTestApi.Infrastructure.Calculator
 {
     /// <summary>
     /// Base factory for instantiating a distance calculator.
