@@ -1,6 +1,7 @@
-﻿using RoomexTechTestApi.Model;
-using RoomexTechTestApi.Services.Calculator;
-using RoomexTechTestApi.Services.MeasurementUnit;
+﻿using RoomexTechTestApi.Infrastructure.Calculator;
+using RoomexTechTestApi.Infrastructure.CustomException;
+using RoomexTechTestApi.Infrastructure.MeasurementUnit;
+using RoomexTechTestApi.Model;
 
 namespace RoomexTechTestApi.Services
 {
@@ -16,11 +17,15 @@ namespace RoomexTechTestApi.Services
         /// <returns>The calculated distance.</returns>
         public double Process(Body body)
         {
-            CalculatorFactoryBase factory = new DefaultFactory();
+            CalculatorFactoryBase factory;
 
             if (string.Equals(body.Form, Cosmos.BodyShape.Sphere))
             {
                 factory = new SpheroidCalculatorFactory(Cosmos.Radius.Earth);
+            }
+            else
+            {
+                throw new BodyShapeException(body.Form);
             }
 
             ICalculator calculator = factory.GetCalculator(Cosmos.CalculationMethod.Pythagora);
